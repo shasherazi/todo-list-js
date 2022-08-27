@@ -1,7 +1,64 @@
+:root{
+    --background: #2C3639;
+    --text: #DCD7C9;
+    --accent1: #A27B5C;
+    --accent2: #3F4E4F;
+}
+
+body, html{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--text)
+}
+
 #main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h1{
+    font-size:3.5em;
+}
+
+form{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    height: 40px;
+    width: 70%;
+    background-color: var(--accent2);
+    border: none;
+    border-radius: 3px;
+    color: var(--text);
+    font-size: 1.5em;
+    padding: 0.7em;
+    outline: none;
+}
+
+#submit{
+    margin-top:10px;
+    width: 30%;
+    height: 35px;
+    font-size:1.1em;
+    color: var(--text);
+    background-color: var(--accent2);
+    border:none;
+    border-radius:3px;
+}
+
+input::placeholder{
+    color: var(--text);
+    opacity: 0.5;
+    user-select: none;
 }
 
 .todo-list-container {
@@ -10,13 +67,13 @@
     align-items: center;
     margin: 30px 0 0 0;
     width: 80%;
-    border: 1px solid black;
+    border: 3px solid var(--accent2);
     border-radius: 5px;
 }
 
 .todo-list-item {
     padding: 5px 20px;
-    border-bottom: 1px dotted black;
+    border-bottom: 2px dotted var(--accent1);
     display: flex;
     align-items: center;
     width: 50%;
