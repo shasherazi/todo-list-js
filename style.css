@@ -1,18 +1,19 @@
-:root{
-    --background: #2C3639;
-    --text: #DCD7C9;
-    --accent1: #A27B5C;
-    --accent2: #3F4E4F;
+:root {
+    --background: #2c3639;
+    --text: #dcd7c9;
+    --accent1: #a27b5c;
+    --accent2: #3f4e4f;
 }
 
-body, html{
-    margin:0;
-    padding:0;
+body,
+html {
+    margin: 0;
+    padding: 0;
 }
 
-body{
+body {
     background-color: var(--background);
-    color: var(--text)
+    color: var(--text);
 }
 
 #main {
@@ -21,18 +22,18 @@ body{
     align-items: center;
 }
 
-h1{
-    font-size:3.5em;
+h1 {
+    font-size: 3.5em;
 }
 
-form{
-    width:100%;
+form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-input{
+input {
     height: 40px;
     width: 70%;
     background-color: var(--accent2);
@@ -44,18 +45,26 @@ input{
     outline: none;
 }
 
-#submit{
-    margin-top:10px;
-    width: 30%;
-    height: 35px;
-    font-size:1.1em;
+#submit {
+    margin-top: 10px;
+    width: clamp(200px, 30%, 400px);
+    height: 40px;
+    font-size: 1.1em;
     color: var(--text);
-    background-color: var(--accent2);
-    border:none;
-    border-radius:3px;
+    background-color: hsl(184, 10%, 35%);
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
 }
 
-input::placeholder{
+#submit:hover {
+    background-color: var(--accent2);
+}
+
+input::placeholder {
     color: var(--text);
     opacity: 0.5;
     user-select: none;
@@ -76,7 +85,7 @@ input::placeholder{
     border-bottom: 2px dotted var(--accent1);
     display: flex;
     align-items: center;
-    width: 50%;
+    width: clamp(200px, 50%, 500px);
 }
 
 .todo-list-item:last-child {
@@ -87,6 +96,7 @@ input::placeholder{
     margin: 0 0 0 5px;
     width: 100%;
     text-align: center;
+    font-size: 1.3em;
 }
 
 .gg-remove {
@@ -112,7 +122,41 @@ input::placeholder{
     background: red;
     border-radius: 5px;
     top: 8px;
-    left: 4px;
+    left: 3px;
+}
+
+.gg-corner-down-left {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    width: 1em;
+    height: 1em;
+    margin-left: 15px;
+}
+.gg-corner-down-left::after,
+.gg-corner-down-left::before {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 3px;
+}
+.gg-corner-down-left::after {
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transform: rotate(45deg);
+    bottom: 3px;
+}
+.gg-corner-down-left::before {
+    width: 16px;
+    height: 12px;
+    border-bottom-right-radius: 4px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    bottom: 6px;
 }
 
 .todo-list-item:hover > .gg-remove {
